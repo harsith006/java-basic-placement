@@ -1,0 +1,13 @@
+public class NullPointerExample {
+    public static void main(String[] args) {
+        try {
+            String text = null; 
+            int length = text.length(); 
+            System.out.println("Length: " + length);
+        } catch (NullPointerException e) {
+            System.out.println("Error: Attempted to access a null object.");
+        } finally {
+            System.out.println("Execution finished.");
+        }
+    }
+}
