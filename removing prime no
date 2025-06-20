@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+public class RemovePrimes {
+    static boolean isPrime(int n) {
+        if (n <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(n); i++)
+            if (n % i == 0) return false;
+        return true;
+    }
+    public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(7);
+        numbers.add(10);
+        numbers.add(13);
+        numbers.add(16);
+        numbers.add(17);
+        numbers.add(20);
+        System.out.println("Original list: " + numbers);
+        numbers.removeIf(n -> isPrime(n));
+        System.out.println("After removing primes: " + numbers);
+    }
+}
