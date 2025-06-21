@@ -1,0 +1,25 @@
+import java.util.HashMap;
+public class Main {
+    public static void main(String[] args) {
+        Node head = new Node(1);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        HashMap<Integer, Node> map = new HashMap<>();
+        int i = 0;
+        Node temp = head;
+        while (temp != null) {
+            map.put(i++, temp);
+            temp = temp.next;
+        }
+        for (int j = i - 1; j >= 0; j--) {
+            System.out.print(map.get(j).data + " ");
+        }
+    }
+}
+class Node {
+    int data;
+    Node next;
+    Node(int d) {
+        data = d;
+    }
+}
